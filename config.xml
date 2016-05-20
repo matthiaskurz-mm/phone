@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget xmlns:gap="http://phonegap.com/ns/1.0" id="org.devgirl.day.phonegap" version="1.0.0"
         xmlns="http://www.w3.org/ns/widgets">
-    <name>PhoneGapDayApp!</name>
+    <name>Eine beliebige Listen-App</name>
     <description>
         Simple conference tracking app.
     </description>
