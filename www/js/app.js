@@ -1,17 +1,26 @@
 // We use an "Immediate Function" to initialize the application to avoid leaving anything behind in the global scope
 (function () {
 
+
+	function renderHomeView() {
+		var html =
+			"<h1>Die Konferenz</h1>" +
+			"<input class='search-key' type='search' placeholder='Enter name'/>" +
+			"<ul class='session-list'></ul>";
+		$('body').html(html);
+		$('.search-key').on('keyup', findByName);
+	}
+
+
+
 	/* ---------------------------------- Local Variables ---------------------------------- */
 	var service = new ConferenceService();
 	service.initialize().done(function () {
-		console.log("Service initialized");
+		renderHomeView();
 	});
 
 	/* --------------------------------- Event Registration -------------------------------- */
-	$('.search-key').on('keyup', findByName);
-	$('.help-btn').on('click', function () {
-		alert("PhoneGap Day v1.0");
-	});
+
 	document.addEventListener('deviceready', function () {
 		if (navigator.notification) { // Override default HTML alert with native dialog
 			window.alert = function (message) {
