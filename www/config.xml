@@ -1,8 +1,8 @@
 <widget xmlns:gap="http://phonegap.com/ns/1.0" xmlns="http://www.w3.org/ns/widgets" id="de.mediamachine.firstphone"
 		version="1.0.0">
 	<name>Wein-App</name>
-	<description>Hier entsteht die Webapp</description>
-	<author href="http://www.mediamachine.de" email="info@mediamachine,de">media machine GmbH</author>
+	<description>Hier entsteht die Wein-App</description>
+	<author href="http://www.mediamachine.de" email="info@mediamachine.de">media machine GmbH</author>
 	<content src="index.html"/>
 	<preference name="permissions" value="none"/>
 	<preference name="orientation" value="default"/>
@@ -75,6 +75,8 @@
 	<platform name="android">
 		<allow-intent href="market:*"/>
 	</platform>
-
-	<gap:platform name="ios"/>
+	<platform name="ios">
+		<allow-intent href="itms:*"/>
+		<allow-intent href="itms-apps:*"/>
+	</platform>
 </widget>
