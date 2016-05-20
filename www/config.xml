@@ -1,4 +1,4 @@
-<widget xmlns:gap="http://phonegap.com/ns/1.0" xmlns="http://www.w3.org/ns/widgets" id="de.mediamachine.firstphone"
+<widget xmlns:gap="http://phonegap.com/ns/1.0" xmlns="http://www.w3.org/ns/widgets" id="de.mediamachine.winetour"
 		version="1.0.1">
 	<name>Wein-App</name>
 	<description>Hier entsteht die Wein-App</description>
