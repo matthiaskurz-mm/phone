@@ -7,7 +7,7 @@ var ConferenceService = function () {
 			[
 				{
 					"id": 0,
-					"title": "PhoneGap Developer App and the PhoneGap GUI",
+					"title": "Weintor",
 					"firstName": "Tim",
 					"lastName": "Kim",
 					"pic": "timkim.jpeg",
