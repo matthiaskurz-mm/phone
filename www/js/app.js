@@ -23,6 +23,8 @@
 				);
 			};
 		}
+		;
+		FastClick.attach(document.body);
 	}, false);
 
 
