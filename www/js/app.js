@@ -4,10 +4,25 @@
 	/* ---------------------------------- Local Variables ---------------------------------- */
 	HomeView.prototype.template = Handlebars.compile($("#home-tpl").html());
 	SessionListView.prototype.template = Handlebars.compile($("#session-list-tpl").html());
+	SessionView.prototype.template = Handlebars.compile($("#session-tpl").html());
 
 	var service = new ConferenceService();
+	var slider = new PageSlider($('body'));
+
 	service.initialize().done(function () {
-		$('body').html(new HomeView(service).render().$el);
+		router.addRoute('', function () {
+			console.log('empty');
+			slider.slidePage(new HomeView(service).render().$el);
+		});
+
+		router.addRoute('sessions/:id', function (id) {
+			console.log('details');
+			service.findById(parseInt(id)).done(function (session) {
+				slider.slidePage(new SessionView(session).render().$el);
+			});
+		});
+
+		router.start();
 	});
 
 	/* --------------------------------- Event Registration -------------------------------- */
@@ -26,5 +41,6 @@
 	}, false);
 
 	/* ---------------------------------- Local Functions ---------------------------------- */
+
 
 }());
