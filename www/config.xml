@@ -75,4 +75,6 @@
 	<platform name="android">
 		<allow-intent href="market:*"/>
 	</platform>
+
+	<gap:platform name="ios"/>
 </widget>
