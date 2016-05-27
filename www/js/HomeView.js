@@ -3,7 +3,6 @@ var HomeView = function (service) {
 	var sessionListView;
 
 	this.initialize = function () {
-		navigator.geolocation.getCurrentPosition(onSuccess, onError);
 		// Define a div wrapper for the view (used to attach events)
 		this.$el = $('<div/>');
 		this.$el.on('keyup', '.search-key', this.findAll);
