@@ -27,6 +27,7 @@
 
 	/* --------------------------------- Event Registration -------------------------------- */
 	document.addEventListener('deviceready', function () {
+		alert('test');
 		FastClick.attach(document.body);
 		if (navigator.notification) { // Override default HTML alert with native dialog
 			window.alert = function (message) {

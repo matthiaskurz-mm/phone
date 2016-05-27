@@ -1,10 +1,13 @@
-$(function () {
-	document.addEventListener("deviceready", onDeviceReady, false);
-})
 
 function onDeviceReady() {
+	alert('333');
 	navigator.geolocation.getCurrentPosition(onSuccess, onError);
 }
+
+
+$(function () {
+	document.addEventListener("deviceready", onDeviceReady, true);
+})
 
 
 // onSuccess Geolocation
