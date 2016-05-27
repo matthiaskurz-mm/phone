@@ -10,8 +10,8 @@
 
     <!-- Whitelist open -->
     <access origin="*"/>
-
-    <plugin name="wellbload.cordova.background-geolocation" spec="0.3.4" source="pgb"/>
+    <platform name="ios"/>
+    <plugin name="fi.avaus.cordova.geolocation" spec="0.3.11" source="pgb"/>
     <!-- WORKSHOP NOTES.... -->
 
     <!-- Status Bar config -->
