@@ -1,5 +1,5 @@
 // We use an "Immediate Function" to initialize the application to avoid leaving anything behind in the global scope
-$(function () {
+(function () {
 
 	/* ---------------------------------- Local Variables ---------------------------------- */
 	HomeView.prototype.template = Handlebars.compile($("#home-tpl").html());
@@ -27,8 +27,6 @@ $(function () {
 
 	/* --------------------------------- Event Registration -------------------------------- */
 	document.addEventListener('deviceready', function () {
-		alert('deviceready');
-		navigator.geolocation.getCurrentPosition(onSuccess, onError);
 		FastClick.attach(document.body);
 		if (navigator.notification) { // Override default HTML alert with native dialog
 			window.alert = function (message) {
@@ -48,19 +46,3 @@ $(function () {
 
 }());
 
-
-// onSuccess Geolocation
-//
-function onSuccess(position) {
-	var element = document.getElementById('geolocation');
-	element.innerHTML = 'Latitude: ' + position.coords.latitude + '<br />' +
-		'Longitude: ' + position.coords.longitude + '<br />'
-
-}
-
-// onError Callback receives a PositionError object
-//
-function onError(error) {
-	alert('code: ' + error.code + '\n' +
-		'message: ' + error.message + '\n');
-}
