@@ -11,7 +11,7 @@
     <!-- Whitelist open -->
     <access origin="*"/>
 
-    <plugin name="Geolocation" value="CDVLocation"/>
+    <plugin name="wellbload.cordova.background-geolocation" spec="0.3.4" source="pgb"/>
     <!-- WORKSHOP NOTES.... -->
 
     <!-- Status Bar config -->
