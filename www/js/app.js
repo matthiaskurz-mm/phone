@@ -50,9 +50,9 @@
 
 	function onSuccess(position) {
 		var element = document.getElementById('geolocation');
-		element.innerHTML = 'Latitude: ' + position.coords.latitude + '<br />' +
-			'Longitude: ' + position.coords.longitude + '<br />' +
-			'<img src="http://maps.googleapis.com/maps/api/staticmap?center=' + position.coords.latitude + ',' + position.coords.longitude + '&zoom=16&size=500x500">'
+		element.innerHTML = '<p>Latitude: ' + position.coords.latitude + '<br />' +
+			'Longitude: ' + position.coords.longitude + '</p>' +
+			'<img src="http://maps.googleapis.com/maps/api/staticmap?center=' + position.coords.latitude + ',' + position.coords.longitude + '&zoom=16&size=300x300">'
 
 	}
 
