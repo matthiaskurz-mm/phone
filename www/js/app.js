@@ -1,6 +1,7 @@
 // We use an "Immediate Function" to initialize the application to avoid leaving anything behind in the global scope
 (function () {
 
+
 	/* ---------------------------------- Local Variables ---------------------------------- */
 	HomeView.prototype.template = Handlebars.compile($("#home-tpl").html());
 	SessionListView.prototype.template = Handlebars.compile($("#session-list-tpl").html());
@@ -27,7 +28,7 @@
 
 	/* --------------------------------- Event Registration -------------------------------- */
 	document.addEventListener('deviceready', function () {
-		alert('test');
+		alert('test deviceready');
 		FastClick.attach(document.body);
 		if (navigator.notification) { // Override default HTML alert with native dialog
 			window.alert = function (message) {
