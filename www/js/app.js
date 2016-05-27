@@ -51,8 +51,8 @@
 	function onSuccess(position) {
 		var element = document.getElementById('geolocation');
 		element.innerHTML = '<p>Latitude: ' + position.coords.latitude + '<br />' +
-			'Longitude: ' + position.coords.longitude + '</p>' +
-			'<img src="http://maps.googleapis.com/maps/api/staticmap?center=' + position.coords.latitude + ',' + position.coords.longitude + '&zoom=16&size=200x200">'
+			'Longitude: ' + position.coords.longitude + '</p><p></p>' +
+			'<img src="http://maps.googleapis.com/maps/api/staticmap?center=' + position.coords.latitude + ',' + position.coords.longitude + '&zoom=16&size=300x300">'
 
 	}
 
@@ -62,6 +62,34 @@
 		alert('code: ' + error.code + '\n' +
 			'message: ' + error.message + '\n');
 	}
+
+
+	var calculateDistance = function (myLongitude, myLatitude, long1, lat1) {
+		erdRadius = 6371;
+
+		myLongitude = myLongitude * (Math.PI / 180);
+		myLatitude = myLatitude * (Math.PI / 180);
+		long1 = long1 * (Math.PI / 180);
+		lat1 = lat1 * (Math.PI / 180);
+
+		x0 = myLongitude * erdRadius * Math.cos(myLatitude);
+		y0 = myLatitude * erdRadius;
+
+		x1 = long1 * erdRadius * Math.cos(lat1);
+		y1 = lat1 * erdRadius;
+
+		dx = x0 - x1;
+		dy = y0 - y1;
+
+		d = Math.sqrt((dx * dx) + (dy * dy));
+
+		if (d < 1) {
+			return Math.round(d * 1000) + " m";
+		} else {
+			return Math.round(d * 10) / 10 + " km";
+		}
+	};
+
 
 }());
 

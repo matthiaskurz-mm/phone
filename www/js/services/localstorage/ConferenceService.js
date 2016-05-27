@@ -20,7 +20,7 @@ var ConferenceService = function () {
 					"id": 1,
 					"title": "Jupitersäule",
 					"subtitle": "Römisches Monument 3. Jahrhundert",
-					"pic": "timkim.jpeg",
+					"pic": "ray.jpg",
 					"description": "Lore ipsum.",
 					"teaser": "das ist der teaser",
 					"audiofile": "test.mp3",
