@@ -28,7 +28,6 @@ var HomeView = function (service) {
 		service.findAll($('.search-key').val()).done(function (sessions) {
 			sessionListView.setSessions(sessions);
 		});
-		alert('Position');
 	};
 
 
