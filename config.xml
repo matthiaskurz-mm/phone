@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget xmlns:gap="http://phonegap.com/ns/1.0" id="org.devgirl.day.phonegap" version="1.0.0"
+<widget xmlns:gap="http://phonegap.com/ns/1.0" id="de.mediamachine.wineapp" version="1.0.0"
         xmlns="http://www.w3.org/ns/widgets">
     <name>Listen-App</name>
     <description>Auf dem Weg zu einer richtigen App
