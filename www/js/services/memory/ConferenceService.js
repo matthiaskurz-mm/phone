@@ -21,7 +21,7 @@ var ConferenceService = function () {
 		return deferred.promise();
 	}
 
-	this.findByName = function (searchKey) {
+	this.findByTitle = function (searchKey) {
 		var deferred = $.Deferred();
 		var results = sessions.filter(function (element) {
 			var fullName = element.firstName + " " + element.lastName;

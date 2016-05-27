@@ -7,12 +7,49 @@
     <link href="assets/ratchet/css/ratchet.css" rel="stylesheet">
     <link href="assets/css/styles.css" rel="stylesheet">
     <link href="assets/css/pageslider.css" rel="stylesheet">
+
+
+    <script type="text/javascript" charset="utf-8">
+
+        // Wait for Cordova to load
+        //
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        // Cordova is ready
+        //
+        function onDeviceReady() {
+            navigator.geolocation.getCurrentPosition(onSuccess, onError);
+        }
+
+        // onSuccess Geolocation
+        //
+        function onSuccess(position) {
+            var element = document.getElementById('geolocation');
+            element.innerHTML = 'Latitude: ' + position.coords.latitude + '<br />' +
+                    'Longitude: ' + position.coords.longitude + '<br />' +
+                    'Altitude: ' + position.coords.altitude + '<br />' +
+                    'Accuracy: ' + position.coords.accuracy + '<br />' +
+                    'Altitude Accuracy: ' + position.coords.altitudeAccuracy + '<br />' +
+                    'Heading: ' + position.coords.heading + '<br />' +
+                    'Speed: ' + position.coords.speed + '<br />' +
+                    'Timestamp: ' + position.timestamp + '<br />';
+        }
+
+        // onError Callback receives a PositionError object
+        //
+        function onError(error) {
+            alert('code: ' + error.code + '\n' +
+                    'message: ' + error.message + '\n');
+        }
+
+    </script>
+
 </head>
 <body>
 
 <script id="home-tpl" type="text/template">
     <header class="bar bar-nav">
-        <h1 class="title">Conference App</h1>
+        <h1 class="title">Mainzer Weinnasen</h1>
     </header>
     <div class="bar bar-standard bar-header-secondary">
         <input class='search-key' type="search"/>
@@ -27,13 +64,20 @@
             <a href="#sessions/{{ id }}">
                 <img class="media-object pull-left" src="assets/pics/{{pic}}">
                 <div class="media-body">
-                    {{firstName}} {{lastName}}
-                    <p>{{title}}</p>
+                    {{title}}
+                    <p>{{subtitle}}</p>
                 </div>
             </a>
         </li>
         {{/each}}
     </ul>
+    <div id="map" class="table-view-cell media">
+        {{#each this}}
+        {{lat}} / {{lon}}
+        {{/each}}
+        <p id="geolocation">Finding geolocation...</p>
+        <br/>hier kommt die Karte hin
+    </div>
 </script>
 
 <script id="session-tpl" type="text/template">
@@ -41,7 +85,7 @@
         <a class="btn btn-link btn-nav pull-left" href="#">
             <span class="icon icon-left-nav"></span>
         </a>
-        <h1 class="title">Session Detail</h1>
+        <h1 class="title">{{title}}</h1>
     </header>
 
     <!-- NOTE: Bars MUST come before content -->
@@ -56,14 +100,18 @@
                 <li class="table-view-cell media">
                     <img class="media-object pull-left" src="assets/pics/{{pic}}">
                     <div class="media-body">
-                        {{ firstName }} {{ lastName }}
-                        <p>{{ title }}</p>
+                        {{title}}
+                        <p>{{ subtitle }}</p>
                     </div>
-                    <p>{{ room }} | {{ time }}</p>
 
                 </li>
                 <li class="table-view-cell media" style="min-height: 250px">
-                    <div><p>{{ description }}</p></div>
+                    <div>
+                        <p><i>{{teaser}}</i></p>
+                        <p>{{ description }}</p>
+
+
+                    </div>
                 </li>
             </ul>
         </div>

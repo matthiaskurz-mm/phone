@@ -20,7 +20,7 @@ var ConferenceService = function () {
 		return deferred.promise();
 	}
 
-	this.findByName = function (searchKey) {
+	this.findByTitle = function (searchKey) {
 		var deferred = $.Deferred();
 		this.db.transaction(
 			function (tx) {

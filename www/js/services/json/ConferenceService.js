@@ -13,7 +13,7 @@ var ConferenceService = function () {
 		return $.ajax({url: url + "/" + id});
 	}
 
-	this.findByName = function (searchKey) {
+	this.findByTitle = function (searchKey) {
 		return $.ajax({url: url + "?name=" + searchKey});
 	}
 

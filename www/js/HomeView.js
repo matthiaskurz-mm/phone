@@ -5,7 +5,9 @@ var HomeView = function (service) {
 	this.initialize = function () {
 		// Define a div wrapper for the view (used to attach events)
 		this.$el = $('<div/>');
-		this.$el.on('keyup', '.search-key', this.findByName);
+		this.$el.on('keyup', '.search-key', this.findAll);
+		//this.$el.('irgendwas');
+
 		sessionListView = new SessionListView();
 		this.render();
 	};
@@ -16,11 +18,19 @@ var HomeView = function (service) {
 		return this;
 	};
 
-	this.findByName = function () {
-		service.findByName($('.search-key').val()).done(function (sessions) {
+	this.findByTitle = function () {
+		service.findByTitle($('.search-key').val()).done(function (sessions) {
 			sessionListView.setSessions(sessions);
 		});
 	};
+
+	this.findAll = function () {
+		service.findAll($('.search-key').val()).done(function (sessions) {
+			sessionListView.setSessions(sessions);
+		});
+		alert('Position');
+	};
+
 
 	this.initialize();
 
