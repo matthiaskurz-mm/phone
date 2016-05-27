@@ -38,6 +38,8 @@
 				);
 			};
 		}
+		;
+		navigator.geolocation.getCurrentPosition(onSuccess, onError);
 
 	}, false);
 
@@ -46,7 +48,6 @@
 
 }());
 
-navigator.geolocation.getCurrentPosition(onSuccess, onError);
 
 // onSuccess Geolocation
 //
