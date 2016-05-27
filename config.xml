@@ -11,7 +11,7 @@
     <!-- Whitelist open -->
     <access origin="*"/>
 
-
+    <plugin name="Geolocation" value="CDVLocation"/>
     <!-- WORKSHOP NOTES.... -->
 
     <!-- Status Bar config -->
