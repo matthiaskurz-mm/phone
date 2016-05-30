@@ -1,3 +1,17 @@
+$(document).ready(function () {
+
+	$(".control-item").click(function () {
+		$(".table-view-cell").hide();
+		$("#" + $(this).data("toggle")).show();
+		$(".control-item").removeClass("active");
+		$(this).addClass("active");
+		var mapcontainer = document.getElementById('mapcontainer');
+		mapcontainer.innerHTML = '<img src="http://maps.googleapis.com/maps/api/staticmap?center=' + $(this).data("lat") + ',' + $(this).data("lon") + '&zoom=16&size=300x300">';
+		console.log(mapcontainer);
+	});
+
+});
+
 var router = (function () {
 
 	"use strict";
