@@ -21,13 +21,13 @@
     </div>
     <!-- NOTE: Bars MUST come before content -->
     <nav class="bar bar-tab tabbar">
-        <a class="tab-item" href="#">
-            <span class="icon icon-home"></span>
+        <a class="tab-item  active" href="#">
+            <span class="icon icon-list"></span>
             <span class="tab-label">Liste</span>
         </a>
         <a class="tab-item" href="#">
             <span class="icon icon-star"></span>
-            <span class="tab-label">Details</span>
+            <span class="tab-label">Beschreibung</span>
         </a>
 
         <a class="tab-item" href="#">
@@ -62,7 +62,8 @@
         {{lat}} / {{lon}}
         {{/each}}
         <div id="geolocation">Finding
-        geolocation...</div>
+            geolocation...
+        </div>
 
     </div>
 </script>
@@ -81,12 +82,12 @@
     <!-- NOTE: Bars MUST come before content -->
     <nav class="bar bar-tab tabbar">
         <a class="tab-item" href="#">
-            <span class="icon icon-home"></span>
+            <span class="icon icon-list"></span>
             <span class="tab-label">Liste</span>
         </a>
-        <a class="tab-item" href="#sessions/{{id}}">
+        <a class="tab-item active" href="#sessions/{{id}}">
             <span class="icon icon-star"></span>
-            <span class="tab-label">Details</span>
+            <span class="tab-label">Beschreibung</span>
         </a>
 
         <a class="tab-item" href="#images/{{id}}">
@@ -145,15 +146,15 @@
     <!-- NOTE: Bars MUST come before content -->
     <nav class="bar bar-tab tabbar">
         <a class="tab-item" href="#">
-            <span class="icon icon-home"></span>
+            <span class="icon icon-list"></span>
             <span class="tab-label">Liste</span>
         </a>
         <a class="tab-item" href="#sessions/{{id}}">
             <span class="icon icon-star"></span>
-            <span class="tab-label">Details</span>
+            <span class="tab-label">Beschreibung</span>
         </a>
 
-        <a class="tab-item" href="#images/{{id}}">
+        <a class="tab-item active" href="#images/{{id}}">
             <span class="icon icon-person"></span>
             <span class="tab-label">Bilder</span>
         </a>
@@ -207,19 +208,19 @@
     <!-- NOTE: Bars MUST come before content -->
     <nav class="bar bar-tab tabbar">
         <a class="tab-item" href="#">
-            <span class="icon icon-home"></span>
+            <span class="icon icon-list"></span>
             <span class="tab-label">Liste</span>
         </a>
         <a class="tab-item" href="#sessions/{{id}}">
             <span class="icon icon-star"></span>
-            <span class="tab-label">Details</span>
+            <span class="tab-label">Beschreibung</span>
         </a>
 
         <a class="tab-item" href="#images/{{id}}">
             <span class="icon icon-person"></span>
             <span class="tab-label">Bilder</span>
         </a>
-        <a class="tab-item" href="#map/{{id}}">
+        <a class="tab-item active" href="#map/{{id}}">
             <span class="icon icon-info"></span>
             <span class="tab-label">Karte</span>
         </a>
