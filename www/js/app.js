@@ -8,6 +8,7 @@
 	SessionListView.prototype.template = Handlebars.compile($("#session-list-tpl").html());
 	SessionView.prototype.template = Handlebars.compile($("#session-tpl").html());
 	ImagesView.prototype.template = Handlebars.compile($("#images-tpl").html());
+	MapView.prototype.template = Handlebars.compile($("#map-tpl").html());
 
 	var service = new ConferenceService();
 	var slider = new PageSlider($('body'));
@@ -29,6 +30,13 @@
 			console.log('details');
 			service.findById(parseInt(id)).done(function (session) {
 				slider.slidePage(new ImagesView(session).render().$el);
+			});
+		});
+
+		router.addRoute('map/:id', function (id) {
+			console.log('details');
+			service.findById(parseInt(id)).done(function (session) {
+				slider.slidePage(new MapView(session).render().$el);
 			});
 		});
 
