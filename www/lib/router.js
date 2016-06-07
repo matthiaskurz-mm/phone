@@ -1,4 +1,6 @@
-$(document).ready(function () {
+/*
+
+ $(document).ready(function () {
 
 	$(".control-item").click(function () {
 		$(".table-view-cell").hide();
@@ -11,7 +13,7 @@ $(document).ready(function () {
 	});
 
 });
-
+ */
 var router = (function () {
 
 	"use strict";

@@ -76,10 +76,10 @@
         </a>
         <h1 class="title">{{title}}</h1>
         <div class="segmented-control">
-            <a class="control-item active" id="c1" data-toggle="teaser">Beschreibung</a>
-            <a class="control-item" id="c2" data-toggle="images">Bilder</a>
-            <a class="control-item" id="c3" data-toggle="audio">Audio</a>
-            <a class="control-item" id="c4" data-toggle="maptab" data-lat="{{lat}}" data-lon="{{lon}}">Karte</a>
+            <a class="control-item active" href="#sessions/{{id}}">Beschreibung</a>
+            <a class="control-item" href="#images/{{id}}">Bilder</a>
+            <a class="control-item" data-toggle="audio">Audio</a>
+            <a class="control-item" data-toggle="maptab" data-lat="{{lat}}" data-lon="{{lon}}">Karte</a>
         </div>
     </header>
 
@@ -130,30 +130,80 @@
 
                     </div>
                 </li>
-                <li class="table-view-cell media single" style="min-height: 250px" id="images">
-                    <div>
-                        <p>hier picslider</p>
-
-
-                    </div>
-
-                <li class="table-view-cell media single" style="min-height: 250px" id="audio">
-                    <div>
-                        <p>{{audiofile}}</p>
-                    </div>
-                </li>
-                <li class="table-view-cell media single" style="min-height: 250px" id="maptab">
-                    <div id="mapcontainer" data-lat="{{lat}}" data-lon="{{lon}}">
-                        <p>MAP</p>
-                    </div>
-                </li>
-
-
             </ul>
         </div>
     </div>
 
 </script>
+
+
+<script id="images-tpl" type="text/template">
+    <header class="bar bar-nav">
+        <a class="btn btn-link btn-nav pull-left" href="#">
+            <span class="icon icon-left-nav"></span>
+        </a>
+        <h1 class="title">{{title}}</h1>
+        <div class="segmented-control">
+            <a class="control-item" href="#sessions/{{id}}">Beschreibung</a>
+            <a class="control-item  active" href="#images/{{id}}">Bilder</a>
+            <a class="control-item" data-toggle="audio">Audio</a>
+            <a class="control-item" data-toggle="maptab" data-lat="{{lat}}" data-lon="{{lon}}">Karte</a>
+        </div>
+    </header>
+
+    <!-- NOTE: Bars MUST come before content -->
+    <nav class="bar bar-tab tabbar">
+        <a class="tab-item active" href="#">
+            <span class="icon icon-home"></span>
+            <span class="tab-label">Home</span>
+        </a>
+        <a class="tab-item" href="#">
+            <span class="icon icon-person"></span>
+            <span class="tab-label">Profile</span>
+        </a>
+        <a class="tab-item" href="#">
+            <span class="icon icon-star-filled"></span>
+            <span class="tab-label">Favorites</span>
+        </a>
+        <a class="tab-item" href="#">
+            <span class="icon icon-search"></span>
+            <span class="tab-label">Search</span>
+        </a>
+        <a class="tab-item" href="#">
+            <span class="icon icon-gear"></span>
+            <span class="tab-label">Settings</span>
+        </a>
+    </nav>
+
+    <div class="content">
+
+        </li>
+
+        <div class="card">
+
+            <ul class="table-view">
+                <li class="table-view-cell media">
+                    <img class="media-object pull-left" src="assets/pics/{{pic}}">
+                    <div class="media-body">
+                        {{title}}
+                        <p>{{ subtitle }}</p>
+                    </div>
+
+                </li>
+                <li class="table-view-cell media" style="min-height: 250px" id="teaser">
+                    <div>
+                        <p>hier Bildergalerie</p>
+
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</script>
+
+
 <script src="cordova.js"></script>
 <script src="lib/fastclick.js"></script>
 <script src="lib/handlebars.js"></script>
@@ -164,6 +214,7 @@
 <script src="js/SessionListView.js"></script>
 <script src="js/HomeView.js"></script>
 <script src="js/SessionView.js"></script>
+<script src="js/ImagesView.js"></script>
 <script src="js/app.js"></script>
 
 </body>

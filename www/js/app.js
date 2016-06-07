@@ -7,6 +7,7 @@
 	HomeView.prototype.template = Handlebars.compile($("#home-tpl").html());
 	SessionListView.prototype.template = Handlebars.compile($("#session-list-tpl").html());
 	SessionView.prototype.template = Handlebars.compile($("#session-tpl").html());
+	ImagesView.prototype.template = Handlebars.compile($("#images-tpl").html());
 
 	var service = new ConferenceService();
 	var slider = new PageSlider($('body'));
@@ -23,6 +24,14 @@
 				slider.slidePage(new SessionView(session).render().$el);
 			});
 		});
+
+		router.addRoute('images/:id', function (id) {
+			console.log('details');
+			service.findById(parseInt(id)).done(function (session) {
+				slider.slidePage(new ImagesView(session).render().$el);
+			});
+		});
+
 
 		router.start();
 	});

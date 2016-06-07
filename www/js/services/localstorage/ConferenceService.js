@@ -6,7 +6,7 @@ var ConferenceService = function () {
 		window.localStorage.setItem("sessions", JSON.stringify(
 			[
 				{
-					"id": 0,
+					"id": 28,
 					"title": "Weintor",
 					"subtitle": "Teil der Stadtmauer in Mittelalter und Neuzeit",
 					"pic": "timkim.jpeg",
