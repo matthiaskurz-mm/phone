@@ -2,7 +2,6 @@
 (function () {
 
 
-
 	/* ---------------------------------- Local Variables ---------------------------------- */
 	HomeView.prototype.template = Handlebars.compile($("#home-tpl").html());
 	SessionListView.prototype.template = Handlebars.compile($("#session-list-tpl").html());
@@ -46,6 +45,9 @@
 
 	/* --------------------------------- Event Registration -------------------------------- */
 	document.addEventListener('deviceready', function () {
+		var map = new GoogleMap();
+		map.initialize();
+
 		navigator.geolocation.getCurrentPosition(onSuccess, onError);
 		FastClick.attach(document.body);
 		if (navigator.notification) { // Override default HTML alert with native dialog

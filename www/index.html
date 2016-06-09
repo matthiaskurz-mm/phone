@@ -184,7 +184,7 @@
                     </div>
 
                 </li>
-                <li class="table-view-cell media" style="min-height: 250px" id="teaser">
+                <li class="table-view-cell media" style="min-height: 250px" id="imagesinner">
                     <div>
                         <p>hier Bildergalerie</p>
 
@@ -247,9 +247,9 @@
                     </div>
 
                 </li>
-                <li class="table-view-cell media" style="min-height: 250px" id="teaser">
+                <li class="table-view-cell media" style="min-height: 250px" id="mapinner">
                     <div>
-                        <p>hier Karte</p>
+                        <div id="map_canvas" style="width: 500px;height: 500px;"></div>
 
 
                     </div>
@@ -260,7 +260,8 @@
 
 </script>
 
-
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="js/googlemap.js"></script>
 <script src="cordova.js"></script>
 <script src="lib/fastclick.js"></script>
 <script src="lib/handlebars.js"></script>
