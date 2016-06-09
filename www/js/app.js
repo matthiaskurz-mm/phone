@@ -49,7 +49,7 @@
 
 		var map = new GoogleMap();
 		map.initialize();
-		
+		alert('abc');
 		navigator.geolocation.getCurrentPosition(onSuccess, onError);
 		FastClick.attach(document.body);
 		if (navigator.notification) { // Override default HTML alert with native dialog
@@ -117,7 +117,7 @@
 
 $(document).ready(function () {
 
-	var map = new GoogleMap();
-	map.initialize();
+	//var map = new GoogleMap();
+	//map.initialize();
 
 });
