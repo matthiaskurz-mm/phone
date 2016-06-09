@@ -11,4 +11,6 @@ var MapView = function (session) {
 	};
 
 	this.initialize();
+
+
 }

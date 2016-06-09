@@ -1,8 +1,6 @@
 // We use an "Immediate Function" to initialize the application to avoid leaving anything behind in the global scope
 (function () {
 
-
-
 	/* ---------------------------------- Local Variables ---------------------------------- */
 	HomeView.prototype.template = Handlebars.compile($("#home-tpl").html());
 	SessionListView.prototype.template = Handlebars.compile($("#session-list-tpl").html());
@@ -14,6 +12,8 @@
 	var slider = new PageSlider($('body'));
 
 	service.initialize().done(function () {
+
+
 		router.addRoute('', function () {
 			console.log('empty');
 			slider.slidePage(new HomeView(service).render().$el);
@@ -46,10 +46,10 @@
 
 	/* --------------------------------- Event Registration -------------------------------- */
 	document.addEventListener('deviceready', function () {
-
 		var map = new GoogleMap();
 		map.initialize();
-		alert('abc');
+		alert('dev ready');
+
 		navigator.geolocation.getCurrentPosition(onSuccess, onError);
 		FastClick.attach(document.body);
 		if (navigator.notification) { // Override default HTML alert with native dialog
@@ -115,9 +115,4 @@
 
 }());
 
-$(document).ready(function () {
 
-	//var map = new GoogleMap();
-	//map.initialize();
-
-});
