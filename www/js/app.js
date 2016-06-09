@@ -46,9 +46,7 @@
 
 	/* --------------------------------- Event Registration -------------------------------- */
 	document.addEventListener('deviceready', function () {
-		var map = new GoogleMap();
-		map.initialize();
-		alert('dev ready');
+
 
 		navigator.geolocation.getCurrentPosition(onSuccess, onError);
 		FastClick.attach(document.body);
@@ -71,6 +69,9 @@
 // onSuccess Geolocation
 
 	function onSuccess(position) {
+		var map = new GoogleMap();
+		map.initialize();
+		alert('dev ready');
 		var element = document.getElementById('geolocation');
 		element.innerHTML = '<p>Latitude: ' + position.coords.latitude + '<br />' +
 			'Longitude: ' + position.coords.longitude + '</p><p></p>' +
