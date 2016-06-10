@@ -50,6 +50,8 @@
 		navigator.geolocation.getCurrentPosition(onSuccess, onError);
 		FastClick.attach(document.body);
 		if (navigator.notification) { // Override default HTML alert with native dialog
+			navigator.notification.alert('test', '', "Titel", "ich button");
+
 			window.alert = function (message) {
 				navigator.notification.alert(
 					message,    // message
