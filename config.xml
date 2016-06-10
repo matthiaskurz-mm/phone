@@ -4,13 +4,10 @@
     <name>Listen-App</name>
     <description>Auf dem Weg zu einer richtigen App
     </description>
-    <author email="info@mediamachine.de" href="http://mediamachine.de">
-        PhoneGap Team
-    </author>
+    <author email="info@mediamachine.de" href="http://mediamachine.de">media machine GmbH</author>
 
     <!-- Whitelist open -->
     <access origin="*"/>
-    <access origin="http://maps.google.com"/>
     <platform name="ios"/>
     <plugin name="fi.avaus.cordova.geolocation" spec="0.3.11" source="pgb"/>
     <!-- WORKSHOP NOTES.... -->
