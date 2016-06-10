@@ -50,8 +50,6 @@
 		navigator.geolocation.getCurrentPosition(onSuccess, onError);
 		FastClick.attach(document.body);
 		if (navigator.notification) { // Override default HTML alert with native dialog
-			navigator.notification.alert('test', '', "Titel", "ich button");
-
 			window.alert = function (message) {
 				navigator.notification.alert(
 					message,    // message
@@ -66,7 +64,8 @@
 
 	/* ---------------------------------- Local Functions ---------------------------------- */
 
-
+	var map = new GoogleMap();
+	map.initialize();
 // onSuccess Geolocation
 
 	function onSuccess(position) {
