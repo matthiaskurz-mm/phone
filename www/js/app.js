@@ -1,7 +1,7 @@
 // We use an "Immediate Function" to initialize the application to avoid leaving anything behind in the global scope
 (function () {
 
-	navigator.geolocation.getCurrentPosition(onSuccess, onError);
+
 
 	/* ---------------------------------- Local Variables ---------------------------------- */
 	HomeView.prototype.template = Handlebars.compile($("#home-tpl").html());
@@ -52,42 +52,32 @@
 	/* ---------------------------------- Local Functions ---------------------------------- */
 
 
-// onSuccess Geolocation
-
-	function onSuccess(position) {
-		var element = document.getElementById('geolocation');
-		//element.innerHTML = '<p>Latitude: ' + position.coords.latitude + '<br />' +	'Longitude: ' + position.coords.longitude
-		element.innerHTML = 'pos geändert'
+// Cordova is ready
+	//
+	function onDeviceReady() {
+		navigator.geolocation.getCurrentPosition(onSuccess, onError);
 	}
 
-// onError Callback receives a PositionError object
-//
+	// onSuccess Geolocation
+	//
+	function onSuccess(position) {
+		var element = document.getElementById('geolocation');
+		element.innerHTML = 'Latitude: ' + position.coords.latitude + '<br />' +
+			'Longitude: ' + position.coords.longitude + '<br />' +
+			'Altitude: ' + position.coords.altitude + '<br />' +
+			'Accuracy: ' + position.coords.accuracy + '<br />' +
+			'Altitude Accuracy: ' + position.coords.altitudeAccuracy + '<br />' +
+			'Heading: ' + position.coords.heading + '<br />' +
+			'Speed: ' + position.coords.speed + '<br />' +
+			'Timestamp: ' + position.timestamp + '<br />';
+	}
+
+	// onError Callback receives a [PositionError](PositionError/positionError.html) object
+	//
 	function onError(error) {
 		alert('code: ' + error.code + '\n' +
 			'message: ' + error.message + '\n');
 	}
-
-
-	function onDeviceReady() {
-
-		alert("navigator hinter");
-		/*
-		 FastClick.attach(document.body);
-
-		 if (navigator.notification) { // Override default HTML alert with native dialog
-		 window.alert = function (message) {
-		 navigator.notification.alert(
-		 message,    // message
-		 null,       // callback
-		 "Workshop", // title
-		 'OK'        // buttonName
-		 );
-		 };
-		 } */
-		var map = new GoogleMap();
-		map.initialize();
-	}
-
 
 	var calculateDistance = function (myLongitude, myLatitude, long1, lat1) {
 		erdRadius = 6371;
