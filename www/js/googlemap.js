@@ -1,6 +1,6 @@
 function GoogleMap(position) {
 
-	this.initialize = function () {
+	this.initialize = function (position) {
 		var map = showMap(position);
 	}
 
