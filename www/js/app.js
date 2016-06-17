@@ -55,7 +55,7 @@
 // Cordova is ready
 	//
 	function onDeviceReady() {
-		navigator.geolocation.getCurrentPosition(onSuccess, onError);
+		//navigator.geolocation.getCurrentPosition(onSuccess, onError);
 	}
 
 	// onSuccess Geolocation

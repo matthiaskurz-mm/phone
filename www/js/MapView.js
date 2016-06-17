@@ -12,5 +12,7 @@ var MapView = function (session) {
 
 	this.initialize();
 
+	navigator.geolocation.getCurrentPosition(onSuccess, onError);
+
 
 }
