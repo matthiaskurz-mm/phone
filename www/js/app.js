@@ -46,25 +46,6 @@
 
 	/* --------------------------------- Event Registration -------------------------------- */
 	document.addEventListener("deviceready", onDeviceReady, false);
-	function onDeviceReady() {
-		//navigator.geolocation.getCurrentPosition(onSuccess, onError);
-		alert("navigator!!!");
-		/*
-		 FastClick.attach(document.body);
-
-		 if (navigator.notification) { // Override default HTML alert with native dialog
-		 window.alert = function (message) {
-		 navigator.notification.alert(
-		 message,    // message
-		 null,       // callback
-		 "Workshop", // title
-		 'OK'        // buttonName
-		 );
-		 };
-		 } */
-		var map = new GoogleMap();
-		map.initialize();
-	}
 
 	/* ---------------------------------- Local Functions ---------------------------------- */
 
@@ -84,6 +65,27 @@
 	function onError(error) {
 		alert('code: ' + error.code + '\n' +
 			'message: ' + error.message + '\n');
+	}
+
+
+	function onDeviceReady() {
+		navigator.geolocation.getCurrentPosition(onSuccess, onError);
+		alert("navigator hinter");
+		/*
+		 FastClick.attach(document.body);
+
+		 if (navigator.notification) { // Override default HTML alert with native dialog
+		 window.alert = function (message) {
+		 navigator.notification.alert(
+		 message,    // message
+		 null,       // callback
+		 "Workshop", // title
+		 'OK'        // buttonName
+		 );
+		 };
+		 } */
+		var map = new GoogleMap();
+		map.initialize();
 	}
 
 
