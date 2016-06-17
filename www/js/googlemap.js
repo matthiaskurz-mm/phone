@@ -1,13 +1,13 @@
-function GoogleMap(position) {
+function GoogleMap() {
 
-	this.initialize = function (position) {
-		var map = showMap(position);
+	this.initialize = function () {
+		var map = showMap();
 	}
 
-	var showMap = function (position) {
+	var showMap = function () {
 		var mapOptions = {
-			zoom: 4,
-			center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+			zoom: 14,
+			center: new google.maps.LatLng(50.005406, 8.270459),
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 		}
 
