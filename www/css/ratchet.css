@@ -1503,3 +1503,9 @@ select {
 .icon-left:before {
 	content: '\e822';
 }
+
+#map_canvas {
+	width: 300px;
+	height: 300px;
+
+}
