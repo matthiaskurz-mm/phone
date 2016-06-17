@@ -62,12 +62,13 @@
 		 );
 		 };
 		 } */
+		var map = new GoogleMap();
+		map.initialize();
 	}
 
 	/* ---------------------------------- Local Functions ---------------------------------- */
 
-	var map = new GoogleMap();
-	map.initialize();
+
 // onSuccess Geolocation
 
 	function onSuccess(position) {
