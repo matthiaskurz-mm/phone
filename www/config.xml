@@ -9,6 +9,7 @@
     <access origin="*"/>
     <platform name="ios"/>
     <plugin name="fi.avaus.cordova.geolocation" spec="0.3.11" source="pgb"/>
+
     <!-- WORKSHOP NOTES.... -->
 
     <!-- Status Bar config -->

@@ -45,7 +45,9 @@
 	});
 
 	/* --------------------------------- Event Registration -------------------------------- */
+	document.addEventListener("deviceready", onDeviceReady, false);
 	document.addEventListener('deviceready', function () {
+		alert("ready");
 
 		navigator.geolocation.getCurrentPosition(onSuccess, onError);
 		FastClick.attach(document.body);
@@ -110,6 +112,9 @@
 		}
 	};
 
+	function onDeviceReady() {
+		alert("navigator.geolocation works well");
+	}
 
 }());
 

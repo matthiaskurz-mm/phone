@@ -1,5 +1,5 @@
 var MapView = function (session) {
-	console.log(session);
+	//console.log(session);
 
 	this.initialize = function () {
 		this.$el = $('<div/>');
