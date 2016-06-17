@@ -48,8 +48,7 @@
 	document.addEventListener("deviceready", onDeviceReady, false);
 	document.addEventListener('deviceready', function () {
 
-		navigator.geolocation.getCurrentPosition(onSuccess, onError);
-		FastClick.attach(document.body);
+
 
 
 	}, false);
@@ -104,6 +103,9 @@
 
 	function onDeviceReady() {
 		alert("navigator!");
+		navigator.geolocation.getCurrentPosition(onSuccess, onError);
+		FastClick.attach(document.body);
+
 		if (navigator.notification) { // Override default HTML alert with native dialog
 			window.alert = function (message) {
 				navigator.notification.alert(
