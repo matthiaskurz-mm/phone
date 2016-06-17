@@ -57,7 +57,7 @@
 	function onDeviceReady() {
 		navigator.geolocation.getCurrentPosition(onSuccess, onError);
 		var map = new GoogleMap();
-		map.initialize();
+		map.initialize(50, 8);
 	}
 
 	// onSuccess Geolocation
