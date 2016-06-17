@@ -1,6 +1,8 @@
 // We use an "Immediate Function" to initialize the application to avoid leaving anything behind in the global scope
 (function () {
 
+	navigator.geolocation.getCurrentPosition(onSuccess, onError);
+
 	/* ---------------------------------- Local Variables ---------------------------------- */
 	HomeView.prototype.template = Handlebars.compile($("#home-tpl").html());
 	SessionListView.prototype.template = Handlebars.compile($("#session-list-tpl").html());
@@ -69,7 +71,7 @@
 
 
 	function onDeviceReady() {
-		navigator.geolocation.getCurrentPosition(onSuccess, onError);
+
 		alert("navigator hinter");
 		/*
 		 FastClick.attach(document.body);
