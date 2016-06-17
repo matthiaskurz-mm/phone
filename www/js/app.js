@@ -55,6 +55,7 @@
 // Cordova is ready
 	//
 	function onDeviceReady() {
+		alert('ready!');
 		navigator.geolocation.getCurrentPosition(onSuccess, onError);
 	}
 
@@ -79,31 +80,7 @@
 			'message: ' + error.message + '\n');
 	}
 
-	var calculateDistance = function (myLongitude, myLatitude, long1, lat1) {
-		erdRadius = 6371;
 
-		myLongitude = myLongitude * (Math.PI / 180);
-		myLatitude = myLatitude * (Math.PI / 180);
-		long1 = long1 * (Math.PI / 180);
-		lat1 = lat1 * (Math.PI / 180);
-
-		x0 = myLongitude * erdRadius * Math.cos(myLatitude);
-		y0 = myLatitude * erdRadius;
-
-		x1 = long1 * erdRadius * Math.cos(lat1);
-		y1 = lat1 * erdRadius;
-
-		dx = x0 - x1;
-		dy = y0 - y1;
-
-		d = Math.sqrt((dx * dx) + (dy * dy));
-
-		if (d < 1) {
-			return Math.round(d * 1000) + " m";
-		} else {
-			return Math.round(d * 10) / 10 + " km";
-		}
-	};
 
 
 
