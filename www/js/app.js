@@ -71,6 +71,7 @@
 			'Heading: ' + position.coords.heading + '<br />' +
 			'Speed: ' + position.coords.speed + '<br />' +
 			'Timestamp: ' + position.timestamp + '<br />');
+		alert(element);
 	}
 
 	// onError Callback receives a [PositionError](PositionError/positionError.html) object
