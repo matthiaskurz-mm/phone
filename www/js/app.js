@@ -56,14 +56,15 @@
 	//
 	function onDeviceReady() {
 		navigator.geolocation.getCurrentPosition(onSuccess, onError);
-		var map = new GoogleMap();
-		map.initialize(50, 8);
+
 	}
 
 	// onSuccess Geolocation
 	//
 	function onSuccess(position) {
 		var element = document.getElementById('geolocation');
+		var map = new GoogleMap();
+		map.initialize(position.coords.latitude, position.coords.longitude);
 		element.innerHTML = 'Latitude: ' + position.coords.latitude + '<br />' +
 			'Longitude: ' + position.coords.longitude + '<br />' +
 			'Altitude: ' + position.coords.altitude + '<br />'
