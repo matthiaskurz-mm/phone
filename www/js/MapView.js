@@ -27,8 +27,5 @@ var MapView = function (session) {
 			'message: ' + error.message + '\n');
 	}
 
-	var map = new GoogleMap();
-	map.initialize();
-
 
 }
