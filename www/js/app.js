@@ -47,8 +47,8 @@
 	/* --------------------------------- Event Registration -------------------------------- */
 	document.addEventListener("deviceready", onDeviceReady, false);
 	function onDeviceReady() {
-		alert("navigator!");
 		navigator.geolocation.getCurrentPosition(onSuccess, onError);
+		alert(position.coords.longitude + "navigator!");
 		/*
 		 FastClick.attach(document.body);
 
